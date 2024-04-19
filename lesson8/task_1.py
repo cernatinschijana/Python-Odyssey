@@ -83,7 +83,13 @@ for num in range(1,11):
 # Folosind un buclă while, dublează valorile listei până când primul element va deveni mai mare decât 50.
 
 # CODUL TĂU VINE MAI JOS:
-
+index = 0
+while lista2[0] <= 50:
+    lista2[index] = lista2[index] * 2
+    index = index + 1
+    if index == len(lista2):
+        index = 0
+print(lista2)
 # CODUL TĂU VINE MAI SUS:
 
 # Generează și printează o listă cu toate numerele pătrat perfect din intervalul [1, 100].
@@ -100,25 +106,44 @@ print(lista3)
 # Folosind un buclă for , printează tabla înmulțirii pentru numărul 7.
 
 # CODUL TĂU VINE MAI JOS:
-
+for i in range(11):
+    inmultirea = i * 7
+    print('7 * ' + str(i) + ' = ' + str(inmultirea))
 # CODUL TĂU VINE MAI SUS:
 
 # Creează o listă de liste, unde fiecare sub-listă conține perechi (i, j) pentru i și j de la 1 la 5. Printează această listă de perechi.
 
 # CODUL TĂU VINE MAI JOS:
+lista4 = []
+for j in range(1,6):
+    for i in range(1,6):
+        lista4.append([i , j])
 
+print(lista4)
 # CODUL TĂU VINE MAI SUS:
 
 # Parcurge lista de la punctul anterior și printează doar perechile unde i < j .
 
 # CODUL TĂU VINE MAI JOS:
-
+for row in lista4:
+    if(row[0] < row[1]):
+        print(row)
 # CODUL TĂU VINE MAI SUS:
 
 # Folosind un buclă while , caută și printează prima valoare care este mai mare decât 10 dintr-o listă cu numere random creată de tine. Dacă nu există, printează "Nu există valori mai mari decât 10".
 
 # CODUL TĂU VINE MAI JOS:
-
+index = 0
+isMoreThan10 = False
+lista5 = [2, 5, 7, 58, 45, 89, 34]
+while index < len(lista5):
+    if lista5[index] > 10:
+        print(lista5[index])
+        isMoreThan10 = True
+        break 
+    index = index + 1
+if (not isMoreThan10):
+    print('Nu exista valori mai mari decit 10')
 # CODUL TĂU VINE MAI SUS:
 
 # Folosind loop-uri Creează un pătrat de stele ( * ) folosind bucle încadrate. Dimensiunea pătratului va fi citită de la utilizator.
@@ -146,11 +171,10 @@ for i in range(lungimea):
 # 123456
 
 # CODUL TĂU VINE MAI JOS:
-num = 0
-while num <= 6:
-    num += num
-    print(num)
-
+num =''
+for i in range(1, 7):
+    num = num + str(i)
+    print(int(num)) 
 # CODUL TĂU VINE MAI SUS:
 
 # Afișarea 2:
@@ -162,7 +186,10 @@ while num <= 6:
 # 5
 
 # CODUL TĂU VINE MAI JOS:
-
+num2 = ''
+for i in range(1, 6, -1):
+    num2 = num2 + str(i)
+    print(int(num2))
 # CODUL TĂU VINE MAI SUS:
 
 # Afișarea 3:
@@ -176,7 +203,10 @@ while num <= 6:
 # g
 
 # CODUL TĂU VINE MAI JOS:
-
+alfabet = list('abcdefg')
+while len(alfabet) > 0:
+    print(''.join(alfabet))
+    alfabet.pop(0)
 # CODUL TĂU VINE MAI SUS:
 
 # Afișarea 4:
@@ -191,7 +221,11 @@ while num <= 6:
 # -+-+-+-+-+-+-+-+
 
 # CODUL TĂU VINE MAI JOS:
-
+pattern = ''
+for i in range(7):
+    for j in range(8):
+        pattern = pattern + '+' + '-'
+    print(pattern)
 # CODUL TĂU VINE MAI SUS:
 
 # Afișarea 5:
