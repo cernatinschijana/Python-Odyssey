@@ -186,10 +186,14 @@ for i in range(1, 7):
 # 5
 
 # CODUL TĂU VINE MAI JOS:
-num2 = ''
-for i in range(1, 6, -1):
-    num2 = num2 + str(i)
-    print(int(num2))
+num2 = []
+for i in range(1, 6):
+    num2.append(i)
+num2.reverse()
+while len(num2) > 0:
+    line = ''.join(str(num2))
+    print(line)
+    num2.pop()
 # CODUL TĂU VINE MAI SUS:
 
 # Afișarea 3:
@@ -222,10 +226,14 @@ while len(alfabet) > 0:
 
 # CODUL TĂU VINE MAI JOS:
 pattern = ''
-for i in range(7):
+for i in range(8):
     for j in range(8):
-        pattern = pattern + '+' + '-'
+        if i % 2 == 0:
+            pattern = pattern + '+' + '-'
+        else:
+            pattern = pattern + '-' + '+'    
     print(pattern)
+    pattern = ''
 # CODUL TĂU VINE MAI SUS:
 
 # Afișarea 5:
@@ -241,7 +249,13 @@ for i in range(7):
 # 243
 
 # CODUL TĂU VINE MAI JOS:
-
+numere = []
+for i in range(1,6):
+    numere.append(3 ** i)
+    print(' '.join(str(numere)))
+while len(numere) > 1:
+    numere.pop(0)
+    print(' '.join(str(numere)))
 # CODUL TĂU VINE MAI SUS:
 
 # Completați sarcinile de mai sus pentru a exersa lucrul cu buclele în Python.
