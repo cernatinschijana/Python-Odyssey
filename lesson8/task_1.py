@@ -188,11 +188,10 @@ for i in range(1, 7):
 # CODUL TĂU VINE MAI JOS:
 num2 = []
 for i in range(1, 6):
-    num2.append(i)
+    num2.append(str(i))
 num2.reverse()
 while len(num2) > 0:
-    line = ''.join(str(num2))
-    print(line)
+    print(''.join(num2))
     num2.pop()
 # CODUL TĂU VINE MAI SUS:
 
@@ -251,11 +250,11 @@ for i in range(8):
 # CODUL TĂU VINE MAI JOS:
 numere = []
 for i in range(1,6):
-    numere.append(3 ** i)
-    print(' '.join(str(numere)))
+    numere.append(str(3 ** i))
+    print(' '.join(numere))
 while len(numere) > 1:
     numere.pop(0)
-    print(' '.join(str(numere)))
+    print(' '.join(numere))
 # CODUL TĂU VINE MAI SUS:
 
 # Completați sarcinile de mai sus pentru a exersa lucrul cu buclele în Python.
