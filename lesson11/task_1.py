@@ -402,8 +402,27 @@ Exemplu: task_20('hello', 'world', 'python') ➞ {5: 2, 6: 1}
 """
 
 # CODUL TĂU VINE MAI JOS:
-def task_20():
-    pass
+def task_20(*args):
+    lenght = []
+    for i in args:
+        lenght.append(len(i))
+
+    occurence = []
+    for j in lenght:
+        counter = 1
+        if lenght.count(j) > 1:
+            counter = lenght.count(j)
+        occurence.append(counter)
+
+    for i in lenght:
+        if lenght.count(i) > 1:
+            lenght.remove(i)
+
+    for n in occurence:
+        if occurence.count(n) > 1:
+            occurence.remove(n)
+
+    return {key: value for (key, value) in zip(lenght, occurence)}
 # CODUL TĂU VINE MAI SUS:
 
 # VERIFICATION PROCESS
