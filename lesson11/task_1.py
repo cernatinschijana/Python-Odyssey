@@ -219,14 +219,21 @@ Exemplu: task_12(1, 2, 3, 4) ➞ False
 
 # CODUL TĂU VINE MAI JOS:
 def task_12(*args):
-    isPrime = False
-    for val in args:
-        for i in range(2 ,val):
-            if val % i == 0:
-                isPrime = False
-                break
+    def is_Prime(num):
+        if num == 2:
+            return True
+        for i in range(2, num):
+            if num % i == 0:
+                return False
             else:
-                isPrime = True
+                return True
+    isPrime = True
+    for val in args:
+        if is_Prime(val):
+            isPrime = True
+        else:
+            isPrime = False
+            break
     return isPrime
 # CODUL TĂU VINE MAI SUS:
 
@@ -398,8 +405,33 @@ Exemplu: task_19(1, 2, 3, 4, 5, 6, 7, 8, 9) ➞ {2: 1, 3: 1, 5: 1, 7: 1}
 """
 
 # CODUL TĂU VINE MAI JOS:
-def task_19():
-    pass
+def task_19(*args):
+    def is_Prime(num):
+        isPrime = True
+        if num == 2:
+            isPrime = True
+        for i in range(2, num):
+            if (num % i) == 0:
+                isPrime = False
+                break
+            else:
+                isPrime = True
+        return isPrime
+            
+    prime_numbers = []
+    occurence = []
+
+    for l in args:
+        if is_Prime(l):
+            prime_numbers.append(l)
+
+    for j in prime_numbers:
+        counter = 1
+        if prime_numbers.count(j) > 1:
+            counter = prime_numbers.count(j)
+        occurence.append(counter)   
+
+    return {key: value for (key, value) in zip(prime_numbers, occurence)}     
 # CODUL TĂU VINE MAI SUS:
 
 # VERIFICATION PROCESS
