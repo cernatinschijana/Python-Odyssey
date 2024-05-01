@@ -372,9 +372,20 @@ Exemplu: task_18('hello', 'world') ➞ {'h': 1, 'e': 1, 'l': 3, 'o': 2, 'w': 1, 
 
 # CODUL TĂU VINE MAI JOS:
 def task_18(*args):
-    litere = set()
-    pass
-            
+    litere = []
+    occurence = []
+    letters = []
+    for j in args:
+        litere[:] = j
+        letters.extend(litere) 
+    
+    for x in letters:
+        counter = 1
+        if letters.count(x) > 1:
+            counter = letters.count(x)
+        occurence.append(counter)
+ 
+    return {key: value for (key, value) in zip(letters, occurence)}
 # CODUL TĂU VINE MAI SUS:
 
 # VERIFICATION PROCESS
@@ -413,14 +424,6 @@ def task_20(*args):
         if lenght.count(j) > 1:
             counter = lenght.count(j)
         occurence.append(counter)
-
-    for i in lenght:
-        if lenght.count(i) > 1:
-            lenght.remove(i)
-
-    for n in occurence:
-        if occurence.count(n) > 1:
-            occurence.remove(n)
 
     return {key: value for (key, value) in zip(lenght, occurence)}
 # CODUL TĂU VINE MAI SUS:
