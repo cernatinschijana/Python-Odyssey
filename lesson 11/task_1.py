@@ -188,21 +188,16 @@ Exemplu: task_11(1, 1, 2, 3, 5, 9) ➞ False
 
 # CODUL TĂU VINE MAI JOS:
 def task_11(*args):
-    isFibonacci = False
-    def Fibonacci(n):
-        for i in range(n):
-           if n == 1:
-                return 0
-           elif n == 2:
-                return 1
-           else:
-                return Fibonacci(n - 1) + Fibonacci(n - 2)
-        for val in args:
-            if Fibonacci(val) == val:
-                isFibonacci = True
-            else:
-                isFibonacci = False
-                break
+    first_value = 1
+    next_value = 1
+
+    for val in args:
+        if first_value == val:
+            isFibonacci = True
+            first_value , next_value = next_value , first_value + next_value
+        else:
+            isFibonacci = False
+            break
     return isFibonacci
 # CODUL TĂU VINE MAI SUS:
 
@@ -364,8 +359,21 @@ Exemplu: task_17(2, add=[3, 4, 5], sub=[1, 2]) ➞ 11
 """
 
 # CODUL TĂU VINE MAI JOS:
-def task_17():
-    pass
+def task_17(number = int, **args):
+    number = number
+    for key, values in args.items():
+        if key == 'add':
+            number = number + sum(values)
+        elif key == 'sub':
+            for i in values:
+                number = number - i
+        elif key == 'mul':
+            for i in values:
+                number = number * i
+        elif key == 'div':
+            for i in values:
+                number = number / i
+    return number
 # CODUL TĂU VINE MAI SUS:
 
 # VERIFICATION PROCESS
