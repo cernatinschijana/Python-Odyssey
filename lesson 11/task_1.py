@@ -328,8 +328,10 @@ def task_16(*args, operation = str):
         return produs  
     
     def div(args):
-        num = 1
+        num = args[0]
         for i in args:
+            if i == args[0]:
+                continue
             num = num / i
         return num
     
@@ -416,6 +418,8 @@ Exemplu: task_19(1, 2, 3, 4, 5, 6, 7, 8, 9) ➞ {2: 1, 3: 1, 5: 1, 7: 1}
 def task_19(*args):
     def is_Prime(num):
         isPrime = True
+        if num == 1:
+            isPrime = False
         if num == 2:
             isPrime = True
         for i in range(2, num):
